@@ -144,6 +144,10 @@ const navigate = useNavigate();
       alert(`You have reached your quiz creation limit of ${quiz_limit}.`);
       return;
     }
+      if (!form.title.trim()) {
+      alert("title is required");
+      return;
+    }
     if (!form.description.trim()) {
       alert("Description is required");
       return;
