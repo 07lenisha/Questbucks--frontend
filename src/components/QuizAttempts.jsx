@@ -36,14 +36,14 @@ export default function QuizAttempts() {
           >
             <div className="mb-4 border-b pb-2 border-dashed border-purple-300">
               <p className="text-xl font-bold text-purple-800 flex items-center gap-2">
-                👤 {attempt.user_id.name}
+                👤Username- {attempt.user_id.name}
               </p>
-              <p className="text-purple-600 text-sm">📧 {attempt.user_id.email}</p>
+    
               <p className="text-purple-700 font-medium mt-1">
                 🏆 Score: <span className="text-purple-900 font-bold">{attempt.score}</span>
               </p>
               <p className="text-gray-500 text-sm">
-                🕒 {new Date(attempt.attempted_at).toLocaleString()}
+                 🕒Atempted On-{new Date(attempt.attempted_at).toLocaleString()}
               </p>
             </div>
 
