@@ -1,9 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from "../Config/axios";
 
-
-
-
 export const createRedemption = createAsyncThunk(
   'redeem/createRedemption',
   async ({quizId,score}, { rejectWithValue }) => {
@@ -22,7 +19,6 @@ export const createRedemption = createAsyncThunk(
     }
   }
 );
-
 
 export const listRedemptions = createAsyncThunk(
   'redeem/listRedemptions',
@@ -50,9 +46,7 @@ export const redeemCode = createAsyncThunk(
           Authorization: localStorage.getItem("token"),
         },
       });
-    
-
-      return response.data;
+     return response.data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.error || err.message);
     }
