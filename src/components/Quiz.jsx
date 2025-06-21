@@ -483,9 +483,7 @@ return (
                 <button
                   onClick={() => editQuiz(quiz)}
                   className="px-3 py-1 bg-yellow-400 text-purple-900 rounded hover:bg-yellow-500"
-                >
-                  Edit
-                </button>
+                > Edit </button>
                 <button
                   onClick={() => handleDelete(quiz._id)}
                   className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
