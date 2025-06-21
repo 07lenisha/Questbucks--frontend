@@ -21,9 +21,6 @@ export const fetchQuizes = createAsyncThunk(
     }
   }
 );
-
-
-
 export const fetchQuizById = createAsyncThunk(
   "quizes/fetchQuizById",
   async (quizId, { rejectWithValue }) => {
@@ -41,8 +38,6 @@ export const fetchQuizById = createAsyncThunk(
     }
   }
 );
-
-
 
 export const createQuiz = createAsyncThunk(
   "quizes/createQuiz",
@@ -81,8 +76,6 @@ export const updateQuiz = createAsyncThunk(
     }
   }
 );
-
-
 export const deleteQuiz = createAsyncThunk(
   "quizes/deleteQuiz",
   async (id, { rejectWithValue }) => {
@@ -133,10 +126,6 @@ export const addTotalPoints = createAsyncThunk(
     }
   }
 );
-
-
-
-
 export const addQuizAttempt = createAsyncThunk(
   "quizes/addQuizAttempt",
   async ({ quizId, score, answers, attemptedAt }, { rejectWithValue }) => {
@@ -158,8 +147,6 @@ export const addQuizAttempt = createAsyncThunk(
     }
   }
 );
-
-
 export const addUserQuizHistory = createAsyncThunk(
   "quiz/addUserQuizHistory",
   async (_, { rejectWithValue }) => {
@@ -176,7 +163,6 @@ export const addUserQuizHistory = createAsyncThunk(
     }
   }
 );
-
 export const fetchQuizHistory = createAsyncThunk(
   "quizes/fetchQuizHistory",
   async (_, { rejectWithValue }) => {
@@ -266,9 +252,7 @@ const quizSlice = createSlice({
 },
   extraReducers: (builder) => {
     builder
-     
-     
-      .addCase(createQuiz.pending, (state) => {
+     .addCase(createQuiz.pending, (state) => {
         state.isLoading = true;
         state.error = null;
         state.serverErrors = null;
@@ -299,12 +283,10 @@ const quizSlice = createSlice({
         state.isLoading = false;
         state.serverErrors = action.payload;
       })
-
-     
       .addCase(deleteQuiz.pending, (state) => {
         state.isLoading = true;
         state.error = null;
-        state.serverErrors = null;
+        state.serverErrors = [];
       })
       .addCase(deleteQuiz.fulfilled, (state, action) => {
         state.isLoading = false;
