@@ -101,7 +101,7 @@ export default function App() {
           </li>
 
           <li>
-            {data.role === "user" && (
+            {data.role === "company" && (
               <Link
                 to={`/redeem-code`}
                 className="relative after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-pink-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100"

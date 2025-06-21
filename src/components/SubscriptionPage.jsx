@@ -23,22 +23,22 @@ export default function SubscriptionPage() {
     {
       subscription_type: "silver",
       icon: <FaStar className="text-yellow-500" size={40} />,
-      price: 500,
-      quiz_limit: 200,
+      price: 499,
+      quiz_limit: 4,
       durationMonths: 1,
     },
     {
       subscription_type: "gold",
       icon: <FaCrown className="text-yellow-700" size={40} />,
-      price: 2000,
-      quiz_limit: 800,
+      price: 1299,
+      quiz_limit: 10,
       durationMonths: 3,
     },
     {
       subscription_type: "enterprise",
       icon: <FaGem className="text-purple-500" size={40} />,
-      price: 5000,
-      quiz_limit: 1200,
+      price: 2499,
+      quiz_limit: 25,
       durationMonths: 6,
     },
   ], []);
