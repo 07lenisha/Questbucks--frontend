@@ -18,7 +18,8 @@ export default function Home() {
       <div className="relative z-10 max-w-7xl mx-auto px-8 py-24 flex flex-col lg:flex-row justify-between gap-16">
 
         <div className="flex-1 max-w-xl space-y-10 text-gray-900">
-          <h1 className="text-6xl font-extrabold leading-tight tracking-tight drop-shadow-md text-pink-600 -ml-67">
+          <h1 className="text-6xl font-extrabold leading-tight tracking-tight drop-shadow-md text-pink-600 -ml-2 sm:-ml-4">
+
             Questbucks — <span className="text-purple-700 font-serif italic">Earn Discounts While You Learn</span>
           </h1>
 
