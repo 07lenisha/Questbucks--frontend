@@ -173,9 +173,8 @@ export default function App() {
         {data.role === "company" ? (
           data.subscription_status === "active" ? (
             <>
-            
-
-              <Link
+          
+          <Link
                 to="/account"
                 className="flex items-center  bg-pink-500 hover:bg-pink-600 transition text-white rounded-full px-4 py-2 font-semibold shadow-md hover:shadow-lg"
                 aria-label="My Account"
@@ -227,7 +226,6 @@ export default function App() {
         <div className>
           <Routes>
             <Route path="/" element={<Home />} />
-
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/reset-password" element={<ResetPassword />} />
@@ -286,9 +284,7 @@ element={<QuizAttempts />} />
   path="/subscribe"
   element={
     <PrivateRoute roles={["company"]}>
-      
-        <SubscriptionPage/>
-      
+      <SubscriptionPage/>
     </PrivateRoute>
   }
 />
@@ -301,10 +297,8 @@ element={<QuizAttempts />} />
     </PrivateRoute>
   }
 />
-  {/* other routes */}
  
-
-<Route
+ <Route
         path="/take-quiz/:id"
         element={
           <PrivateRoute roles={["user"]}>
@@ -340,7 +334,7 @@ element={<QuizAttempts />} />
         </div>
       </main>
 
-      {/* Footer */}
+     
       <footer className="bg-white/90 text-center text-sm text-gray-600 py-4">
         &copy; {new Date().getFullYear()} <span className="font-medium text-purple-600">Questbucks</span>. All rights reserved.
       </footer>
