@@ -19,7 +19,8 @@ import SubscriptionPage from './components/SubscriptionPage';
 import SubscriptionList from './components/SubscriptionList';
 import AdminCompanyStatusManager from './components/AdminCompanyStatusManager';
 import Companyquishistory from './components/Companyquishistory';
-import QuizAttempts from './components/quizAttempts';
+import QuizAttempts from "./components/QuizAttempts";
+
 export default function App() {
   const { isLoggedIn ,data} = useSelector((state) => state.users);
   const dispatch = useDispatch();
