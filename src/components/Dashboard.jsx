@@ -38,22 +38,25 @@ export default function Dashboard() {
             >
               Take a Quiz
             </Link>
-            <Link
-              to="/redeem-code"
-              className="bg-blue-500 text-white px-5 py-2 rounded shadow hover:bg-blue-600 transition"
-            >
-              Redeem Points
-            </Link>
+           
           </>
         )}
 
         {data?.role === "company" && (
+          <>
           <Link
             to="/quiz"
             className="bg-purple-600 text-white px-5 py-2 rounded shadow hover:bg-purple-700 transition"
           >
             Create a Quiz
           </Link>
+           <Link
+              to="/redeem-code"
+              className="bg-blue-500 text-white px-5 py-2 rounded shadow hover:bg-blue-600 transition"
+            >
+              Redeem Points
+            </Link>
+            </>
         )}
 
         <Link

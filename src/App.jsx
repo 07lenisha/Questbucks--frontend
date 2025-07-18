@@ -19,6 +19,7 @@ import SubscriptionPage from './components/SubscriptionPage';
 import SubscriptionList from './components/SubscriptionList';
 import AdminCompanyStatusManager from './components/AdminCompanyStatusManager';
 import Companyquishistory from './components/Companyquishistory';
+import QuizAttempts from './components/quizAttempts';
 export default function App() {
   const { isLoggedIn ,data} = useSelector((state) => state.users);
   const dispatch = useDispatch();
@@ -268,10 +269,14 @@ export default function App() {
     </PrivateRoute>
   }
 /> 
+<Route 
+path="/company/quiz/:quizId/attempts" 
+element={<QuizAttempts />} />
+
 <Route
   path="/redeem-code"
   element={
-    <PrivateRoute roles={["user"]}>
+    <PrivateRoute roles={["company"]}>
       <SearchRedemptions/>
     </PrivateRoute>
   }
@@ -287,6 +292,7 @@ export default function App() {
     </PrivateRoute>
   }
 />
+
 <Route
   path="/admin/activation"
   element={

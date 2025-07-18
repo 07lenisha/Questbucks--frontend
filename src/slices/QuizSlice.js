@@ -13,7 +13,6 @@ export const fetchQuizes = createAsyncThunk(
         
       });
       return response.data;
-      // console.log("the qises",response.data) 
     } catch (err) {
       return rejectWithValue(
         err.response?.data?.error || "Failed to fetch quizes"
@@ -45,15 +44,15 @@ export const createQuiz = createAsyncThunk(
     try {
       const response = await axios.post("/quiz", quizData, {
         headers: {
+           "Content-Type": "application/json",
           Authorization: localStorage.getItem("token"),
         },
       });
       return response.data;
     } catch (err) {
-      return rejectWithValue({
-        message: err.message,
-        errors: err.response?.data?.errors || "Failed to create quiz",
-      });
+      return rejectWithValue(
+        err.response?.data?.errors)
+        ;
     }
   }
 );
@@ -64,15 +63,15 @@ export const updateQuiz = createAsyncThunk(
     try {
       const response = await axios.put(`/quiz/${id}`, quizData, {
         headers: {
+           "Content-Type": "application/json",
           Authorization: localStorage.getItem("token"),
         },
       });
       return response.data;
     } catch (err) {
-      return rejectWithValue({
-        message: err.message,
-        errors: err.response?.data?.errors || "Failed to update quiz",
-      });
+     return rejectWithValue(
+        err.response?.data?.errors
+     )
     }
   }
 );
@@ -191,7 +190,7 @@ const quizSlice = createSlice({
       totalPoints: 0,       
       isLoading: false,
       error: null,
-      serverErrors: null,
+      serverErrors: [],
       currentIndex: 0,      
       currentQuiz: null,    
       score: null,  
@@ -255,7 +254,8 @@ const quizSlice = createSlice({
      .addCase(createQuiz.pending, (state) => {
         state.isLoading = true;
         state.error = null;
-        state.serverErrors = null;
+       state.serverErrors = [];
+
       })
       .addCase(createQuiz.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -263,14 +263,14 @@ const quizSlice = createSlice({
       })
       .addCase(createQuiz.rejected, (state, action) => {
         state.isLoading = false;
-        state.serverErrors = action.payload;
+         state.serverErrors = action.payload
       })
 
     
       .addCase(updateQuiz.pending, (state) => {
         state.isLoading = true;
         state.error = null;
-        state.serverErrors = null;
+        state.serverErrors = [];
       })
       .addCase(updateQuiz.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -281,7 +281,7 @@ const quizSlice = createSlice({
       })
       .addCase(updateQuiz.rejected, (state, action) => {
         state.isLoading = false;
-        state.serverErrors = action.payload;
+          state.serverErrors = action.payload
       })
       .addCase(deleteQuiz.pending, (state) => {
         state.isLoading = true;
